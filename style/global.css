@@ -24,7 +24,7 @@
 }
 
 body, html {
-    margin: 25px;
+    margin: 0;
     color: white;
     font-family: Neue;
     background-color: rgb(24, 23, 23);
@@ -35,9 +35,26 @@ a {
     color: white;
 }
 
-.title {
+p {
+    text-transform: uppercase;
+}
+
+.navbar {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    background-color: #3333336b;
+    backdrop-filter: blur(8px) saturate(1.2) brightness(0.9);
+    -webkit-backdrop-filter: blur(8px) saturate(1.2) brightness(0.9);
+}
+
+.content {
+    margin: 25px;
+}
+
+.navbar .title {
     font-weight: 800;
-    font-size: 45px;
+    font-size: 30px;
 }
 
 .guides-wrapper .guides {
@@ -61,13 +78,17 @@ a {
 }
 
 .guide {
+    display: flex;
     position: relative;
+    justify-content: center;
     border: 1px #929292 solid;
     border-radius: 20px;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     transition: all 0.5s;
+    height: 150px;
+    z-index: 0;
 }
 
 .guide:hover {
@@ -81,9 +102,19 @@ a {
     font-size: 35px;
 }
 
+.guide .guide-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+
+    filter: blur(2px) saturate(1.2) brightness(0.9);
+    -webkit-filter: blur(2px) saturate(1.2) brightness(0.9);
+}
 .guide .guide-details {
-    text-align: center;
-    justify-content: center;
+    position: absolute;
+    z-index: 1;
 }
 
 .author {
